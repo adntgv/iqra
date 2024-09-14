@@ -9,18 +9,22 @@ const Navbar = () => {
   const { theme, setTheme } = useTheme();
 
   return (
-    <nav className="border-b bg-background">
+    <nav className="border-b bg-background sticky top-0 z-10">
       <div className="container mx-auto flex justify-between items-center py-4">
         <Link href="/" className="text-2xl font-bold text-primary">Iqra</Link>
-        <div className="space-x-4 flex items-center">
+        <div className="space-x-4 flex items-center justify-center">
           <Button variant="ghost" asChild>
             <Link href="/">Home</Link>
           </Button>
           <Button variant="ghost" asChild>
             <Link href="/learn">Learn</Link>
           </Button>
-          <Button variant="ghost" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
-            {theme === 'dark' ? <SunIcon className="h-5 w-5" /> : <MoonIcon className="h-5 w-5" />}
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+          >
+            {theme === 'dark' ? <SunIcon className="h-[1.2rem] w-[1.2rem]" /> : <MoonIcon className="h-[1.2rem] w-[1.2rem]" />}
           </Button>
         </div>
       </div>

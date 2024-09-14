@@ -1,5 +1,7 @@
 import React from 'react';
 import { Play } from 'lucide-react';
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 
 interface TranslationToggleProps {
   showTranslation: boolean;
@@ -15,28 +17,33 @@ const TranslationToggle: React.FC<TranslationToggleProps> = ({
   language,
 }) => {
   return (
-    <div className="mb-6">
+    <div className="space-y-4">
       {showTranslation && (
-        <p className="text-lg font-semibold text-gray-800 bg-yellow-100 p-4 rounded-lg shadow-inner mb-4">
-          {translation}
-        </p>
+        <Card>
+          <CardContent className="p-6">
+            <p className="text-lg font-semibold text-foreground">
+              {translation}
+            </p>
+          </CardContent>
+        </Card>
       )}
       <div className="flex justify-center space-x-4">
-        <button
+        <Button
           onClick={() => setShowTranslation(!showTranslation)}
-          className="bg-green-500 text-white px-6 py-3 rounded-full hover:bg-green-600 transition duration-300 shadow-md"
+          variant="outline"
         >
           {showTranslation 
             ? (language === 'russian' ? 'Скрыть перевод' : 'Аударманы жасыру')
             : (language === 'russian' ? 'Показать перевод' : 'Аударманы көрсету')
           }
-        </button>
-        <button
+        </Button>
+        <Button
           onClick={() => {/* Implement audio playback */}}
-          className="bg-yellow-500 text-white p-3 rounded-full hover:bg-yellow-600 transition duration-300 shadow-md"
+          variant="outline"
         >
-          <Play size={24} />
-        </button>
+          <Play className="h-4 w-4 mr-2" />
+          {language === 'russian' ? 'Прослушать' : 'Тыңдау'}
+        </Button>
       </div>
     </div>
   );

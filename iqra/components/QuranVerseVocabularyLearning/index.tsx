@@ -49,59 +49,61 @@ const QuranVerseVocabularyLearning: React.FC = () => {
   };
 
   return (
-    <Card className="w-full max-w-4xl mx-auto">
-      <CardContent className="p-6">
-        <div className="flex justify-between items-center mb-6">
-          <h2 className="text-3xl font-bold">
-            {language === 'russian' ? 'Изучение Корана' : 'Құранды үйрену'}
-          </h2>
-          <Button
-            onClick={toggleLanguage}
-            variant="outline"
-          >
-            {language === 'russian' ? 'Қазақша' : 'Русский'}
-          </Button>
-        </div>
+    <div className="w-full max-w-4xl mx-auto p-6">
+      <div className="flex justify-between items-center mb-6">
+        <h2 className="text-3xl font-bold text-primary">
+          {language === 'russian' ? 'Изучение Корана' : 'Құранды үйрену'}
+        </h2>
+        <Button
+          onClick={toggleLanguage}
+          variant="outline"
+        >
+          {language === 'russian' ? 'Қазақша' : 'Русский'}
+        </Button>
+      </div>
 
-        <div className="space-y-6">
-          <ArabicVerse 
-            verse={currentVerse} 
-            knownWords={knownWords} 
-            setSelectedWord={setSelectedWord} 
-          />
-
-          <TranslationToggle 
-            showTranslation={showTranslation}
-            setShowTranslation={setShowTranslation}
-            translation={currentVerse.translation[language]}
-            language={language}
-          />
-
-          {selectedWord !== null && (
-            <WordDetails 
-              word={currentVerse.words[selectedWord]}
-              language={language}
-              isKnown={knownWords.has(selectedWord)}
-              toggleWordKnown={() => toggleWordKnown(selectedWord)}
+      <div className="space-y-8">
+        <Card className="overflow-hidden">
+          <CardContent className="p-6">
+            <ArabicVerse 
+              verse={currentVerse} 
+              knownWords={knownWords} 
+              setSelectedWord={setSelectedWord} 
             />
-          )}
+          </CardContent>
+        </Card>
 
-          <NavigationControls 
-            prevVerse={prevVerse}
-            nextVerse={nextVerse}
-            surah={currentVerse.surah}
-            ayah={currentVerse.ayah}
-            language={language}
-          />
+        <TranslationToggle 
+          showTranslation={showTranslation}
+          setShowTranslation={setShowTranslation}
+          translation={currentVerse.translation[language]}
+          language={language}
+        />
 
-          <ProgressIndicator 
-            knownWordsCount={knownWords.size}
-            totalWordsCount={currentVerse.words.length}
+        {selectedWord !== null && (
+          <WordDetails 
+            word={currentVerse.words[selectedWord]}
             language={language}
+            isKnown={knownWords.has(selectedWord)}
+            toggleWordKnown={() => toggleWordKnown(selectedWord)}
           />
-        </div>
-      </CardContent>
-    </Card>
+        )}
+
+        <NavigationControls 
+          prevVerse={prevVerse}
+          nextVerse={nextVerse}
+          surah={currentVerse.surah}
+          ayah={currentVerse.ayah}
+          language={language}
+        />
+
+        <ProgressIndicator 
+          knownWordsCount={knownWords.size}
+          totalWordsCount={currentVerse.words.length}
+          language={language}
+        />
+      </div>
+    </div>
   );
 };
 
