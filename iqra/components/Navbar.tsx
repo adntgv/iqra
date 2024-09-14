@@ -10,9 +10,9 @@ const Navbar = () => {
 
   return (
     <nav className="border-b bg-background sticky top-0 z-10">
-      <div className="container mx-auto flex justify-between items-center py-4">
+      <div className="container mx-auto flex flex-row justify-between items-center py-4">
         <Link href="/" className="text-2xl font-bold text-primary">Iqra</Link>
-        <div className="space-x-4 flex items-center justify-center">
+        <div className="flex flex-row items-center space-x-4">
           <Button variant="ghost" asChild>
             <Link href="/">Home</Link>
           </Button>

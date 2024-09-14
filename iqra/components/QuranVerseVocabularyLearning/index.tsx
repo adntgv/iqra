@@ -50,7 +50,7 @@ const QuranVerseVocabularyLearning: React.FC = () => {
 
   return (
     <div className="w-full max-w-4xl mx-auto p-6">
-      <div className="flex justify-between items-center mb-6">
+      <div className="flex flex-row justify-between items-center mb-6">
         <h2 className="text-3xl font-bold text-primary">
           {language === 'russian' ? 'Изучение Корана' : 'Құранды үйрену'}
         </h2>

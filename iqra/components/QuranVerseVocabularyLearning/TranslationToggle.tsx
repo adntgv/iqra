@@ -27,7 +27,7 @@ const TranslationToggle: React.FC<TranslationToggleProps> = ({
           </CardContent>
         </Card>
       )}
-      <div className="flex justify-center space-x-4">
+      <div className="flex flex-row justify-center space-x-4">
         <Button
           onClick={() => setShowTranslation(!showTranslation)}
           variant="outline"
