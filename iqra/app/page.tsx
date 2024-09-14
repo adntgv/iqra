@@ -1,24 +1,25 @@
 import Link from 'next/link';
-import { BookOpen, Languages, Star, ArrowRight } from 'lucide-react';
+import { ArrowRight, BookOpen, Languages, Star } from 'lucide-react';
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function Home() {
   return (
-    <div className="bg-gradient-to-br from-blue-100 via-white to-green-100">
-      <div className="container mx-auto px-4 py-8">
+    <div className="bg-background">
+      <div className="container mx-auto px-4 py-16">
         <header className="text-center mb-16">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-600">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
             Welcome to Iqra
           </h1>
-          <p className="text-lg sm:text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Embark on a journey to learn Arabic and understand the Quran through interactive lessons and vocabulary building.
           </p>
-          <Link href="/learn" className="group relative inline-flex items-center justify-center p-4 px-6 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out border-2 border-blue-600 rounded-full shadow-md">
-            <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-blue-600 group-hover:translate-x-0 ease">
-              <ArrowRight className="w-6 h-6" />
-            </span>
-            <span className="absolute flex items-center justify-center w-full h-full text-blue-600 transition-all duration-300 transform group-hover:translate-x-full ease">Start Your Journey</span>
-            <span className="relative invisible">Start Your Journey</span>
-          </Link>
+          <Button asChild size="lg">
+            <Link href="/learn">
+              Start Your Journey
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
@@ -27,27 +28,31 @@ export default function Home() {
             { icon: Languages, title: "Vocabulary Building", description: "Expand your Arabic vocabulary with context-based learning, focusing on words used in the Quran." },
             { icon: Star, title: "Track Progress", description: "Monitor your learning journey with our built-in progress tracking system." },
           ].map((feature, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1 border border-gray-200">
-              <div className="text-blue-500 mb-4">
-                <feature.icon className="w-12 h-12" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-              <p className="text-gray-600">{feature.description}</p>
-            </div>
+            <Card key={index}>
+              <CardHeader>
+                <feature.icon className="w-12 h-12 text-primary mb-4" />
+                <CardTitle>{feature.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">{feature.description}</p>
+              </CardContent>
+            </Card>
           ))}
         </div>
 
-        <div className="bg-gradient-to-r from-blue-500 to-green-500 p-8 rounded-lg shadow-lg text-white mb-16">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-center">Begin Your Quranic Journey Today</h2>
-          <p className="text-center mb-6">
-            Join thousands of learners who have deepened their understanding of the Quran through our platform.
-          </p>
-          <div className="text-center">
-            <Link href="/learn" className="inline-block bg-white text-blue-600 font-bold py-3 px-6 rounded-full transition duration-300 transform hover:-translate-y-1 hover:shadow-lg">
-              Get Started Now
-            </Link>
-          </div>
-        </div>
+        <Card className="mb-16 bg-gradient-to-r from-blue-500 to-green-500 text-white">
+          <CardHeader>
+            <CardTitle className="text-2xl sm:text-3xl text-center">Begin Your Quranic Journey Today</CardTitle>
+          </CardHeader>
+          <CardContent className="text-center">
+            <p className="mb-6">
+              Join thousands of learners who have deepened their understanding of the Quran through our platform.
+            </p>
+            <Button variant="secondary" size="lg" asChild>
+              <Link href="/learn">Get Started Now</Link>
+            </Button>
+          </CardContent>
+        </Card>
 
         <div className="mb-16">
           <h3 className="text-2xl font-semibold mb-4 text-center">What Our Learners Say</h3>
@@ -56,17 +61,19 @@ export default function Home() {
               { name: "Ahmed", quote: "Iqra has transformed my understanding of the Quran. The interactive lessons are engaging and effective." },
               { name: "Fatima", quote: "The vocabulary building feature is incredible. I've expanded my Arabic vocabulary significantly." },
             ].map((testimonial, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md italic">
-                <p className="mb-4">"{testimonial.quote}"</p>
-                <p className="font-semibold">- {testimonial.name}</p>
-              </div>
+              <Card key={index}>
+                <CardContent className="pt-6">
+                  <p className="italic mb-4">"{testimonial.quote}"</p>
+                  <p className="font-semibold">- {testimonial.name}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
       </div>
 
-      <footer className="bg-gray-100 py-6">
-        <div className="container mx-auto px-4 text-center text-gray-600">
+      <footer className="border-t py-6">
+        <div className="container mx-auto px-4 text-center text-muted-foreground">
           <p>© 2024 Iqra. All rights reserved.</p>
         </div>
       </footer>

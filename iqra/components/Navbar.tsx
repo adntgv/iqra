@@ -1,17 +1,22 @@
 import Link from 'next/link';
+import { Button } from "@/components/ui/button"; 
 
 const Navbar = () => {
   return (
-    <nav className="bg-blue-600 p-4">
-      <div className="container mx-auto flex justify-between items-center">
-        <Link href="/" className="text-white text-2xl font-bold">Iqra</Link>
+    <nav className="border-b">
+      <div className="container mx-auto flex justify-between items-center py-4">
+        <Link href="/" className="text-2xl font-bold">Iqra</Link>
         <div className="space-x-4">
-          <Link href="/" className="text-white hover:text-blue-200">Home</Link>
-          <Link href="/learn" className="text-white hover:text-blue-200">Learn</Link>
+          <Button variant="ghost" asChild>
+            <Link href="/">Home</Link>
+          </Button>
+          <Button variant="ghost" asChild>
+            <Link href="/learn">Learn</Link>
+          </Button>
         </div>
       </div>
     </nav>
   );
 };
 
-export default Navbar;
+export default Navbar; 
