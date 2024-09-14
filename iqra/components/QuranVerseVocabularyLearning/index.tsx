@@ -49,22 +49,23 @@ const QuranVerseVocabularyLearning: React.FC = () => {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-6">
-      <div className="flex flex-row justify-between items-center mb-6">
-        <h2 className="text-3xl font-bold text-primary">
+    <div className="w-full max-w-4xl mx-auto p-4 sm:p-6">
+      <div className="flex flex-col sm:flex-row justify-between items-center mb-6">
+        <h2 className="text-2xl sm:text-3xl font-bold text-primary mb-4 sm:mb-0">
           {language === 'russian' ? 'Изучение Корана' : 'Құранды үйрену'}
         </h2>
         <Button
           onClick={toggleLanguage}
           variant="outline"
+          className="w-full sm:w-auto"
         >
           {language === 'russian' ? 'Қазақша' : 'Русский'}
         </Button>
       </div>
 
-      <div className="space-y-8">
+      <div className="space-y-6">
         <Card className="overflow-hidden">
-          <CardContent className="p-6">
+          <CardContent className="p-4 sm:p-6">
             <ArabicVerse 
               verse={currentVerse} 
               knownWords={knownWords} 

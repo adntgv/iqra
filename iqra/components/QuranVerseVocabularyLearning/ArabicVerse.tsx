@@ -10,13 +10,13 @@ interface ArabicVerseProps {
 
 const ArabicVerse: React.FC<ArabicVerseProps> = ({ verse, knownWords, setSelectedWord }) => {
   return (
-    <div className="flex flex-col items-center justify-center space-y-6">
-      <div className="flex flex-wrap justify-center items-center mb-4 arabic-text" dir="rtl">
+    <div className="flex flex-col items-center justify-center space-y-4 sm:space-y-6">
+      <div className="flex flex-wrap justify-center items-center mb-2 sm:mb-4 arabic-text" dir="rtl">
         {verse.words.map((word: Word, index: number) => (
           <span
             key={index}
             className={cn(
-              "cursor-pointer m-1 p-2 rounded transition-all duration-300 ease-in-out text-5xl",
+              "cursor-pointer m-1 p-1 sm:p-2 rounded transition-all duration-300 ease-in-out text-3xl sm:text-5xl",
               "hover:bg-primary/10 active:bg-primary/20",
               knownWords.has(index) 
                 ? "text-green-600 dark:text-green-400" 
@@ -30,7 +30,7 @@ const ArabicVerse: React.FC<ArabicVerseProps> = ({ verse, knownWords, setSelecte
           </span>
         ))}
       </div>
-      <p className="text-xl italic text-muted-foreground text-center">{verse.transliteration}</p>
+      <p className="text-base sm:text-xl italic text-muted-foreground text-center">{verse.transliteration}</p>
     </div>
   );
 };
