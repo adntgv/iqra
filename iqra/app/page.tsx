@@ -8,7 +8,7 @@ export default function Home() {
     <div className="bg-background">
       <div className="container mx-auto px-4 py-16">
         <header className="text-center mb-16">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
             Welcome to Iqra
           </h1>
           <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
@@ -22,7 +22,7 @@ export default function Home() {
           </Button>
         </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {[
             { icon: BookOpen, title: "Interactive Lessons", description: "Engage with our carefully crafted lessons designed to make learning Arabic intuitive and enjoyable." },
             { icon: Languages, title: "Vocabulary Building", description: "Expand your Arabic vocabulary with context-based learning, focusing on words used in the Quran." },
@@ -40,7 +40,7 @@ export default function Home() {
           ))}
         </div>
 
-        <Card className="mb-16 bg-gradient-to-r from-blue-500 to-green-500 text-white">
+        <Card className="mb-16 bg-primary text-primary-foreground">
           <CardHeader>
             <CardTitle className="text-2xl sm:text-3xl text-center">Begin Your Quranic Journey Today</CardTitle>
           </CardHeader>
@@ -71,12 +71,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
-      <footer className="border-t py-6">
-        <div className="container mx-auto px-4 text-center text-muted-foreground">
-          <p>© 2024 Iqra. All rights reserved.</p>
-        </div>
-      </footer>
     </div>
   );
 }

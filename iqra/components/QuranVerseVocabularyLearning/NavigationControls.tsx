@@ -1,5 +1,6 @@
 import React from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { Button } from "@/components/ui/button"
+import { ChevronLeft, ChevronRight, Book } from 'lucide-react';
 
 interface NavigationControlsProps {
   prevVerse: () => void;
@@ -17,22 +18,19 @@ const NavigationControls: React.FC<NavigationControlsProps> = ({
   language,
 }) => {
   return (
-    <div className="flex justify-between items-center mb-6">
-      <button
-        onClick={prevVerse}
-        className="bg-gray-200 p-3 rounded-full hover:bg-gray-300 transition duration-300 shadow-md"
-      >
-        <ChevronLeft size={24} />
-      </button>
-      <div className="text-center text-lg font-semibold text-gray-700">
-        <p>{language === 'russian' ? 'Сура' : 'Сүре'} {surah}, {language === 'russian' ? 'Аят' : 'Аят'} {ayah}</p>
+    <div className="flex justify-between items-center bg-gradient-to-r from-emerald-500 to-teal-500 p-4 rounded-lg shadow-md">
+      <Button onClick={prevVerse} variant="outline" className="bg-white hover:bg-gray-100 text-emerald-700">
+        <ChevronLeft className="mr-2 h-4 w-4" />
+        {language === 'russian' ? 'Предыдущий' : 'Алдыңғы'}
+      </Button>
+      <div className="text-center text-xl font-bold text-white">
+        <Book className="inline-block mr-2 h-6 w-6" />
+        <p className="inline-block">{language === 'russian' ? 'Сура' : 'Сүре'} {surah}, {language === 'russian' ? 'Аят' : 'Аят'} {ayah}</p>
       </div>
-      <button
-        onClick={nextVerse}
-        className="bg-gray-200 p-3 rounded-full hover:bg-gray-300 transition duration-300 shadow-md"
-      >
-        <ChevronRight size={24} />
-      </button>
+      <Button onClick={nextVerse} variant="outline" className="bg-white hover:bg-gray-100 text-emerald-700">
+        {language === 'russian' ? 'Следующий' : 'Келесі'}
+        <ChevronRight className="ml-2 h-4 w-4" />
+      </Button>
     </div>
   );
 };

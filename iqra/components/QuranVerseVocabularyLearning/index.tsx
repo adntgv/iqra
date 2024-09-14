@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { versesData } from '../../lib/versesData';
-import { Verse, Word } from '../../types';
+import { Verse } from '../../types';
 import ArabicVerse from './ArabicVerse';
 import TranslationToggle from './TranslationToggle';
 import WordDetails from './WordDetails';
@@ -52,7 +52,7 @@ const QuranVerseVocabularyLearning: React.FC = () => {
     <Card className="w-full max-w-4xl mx-auto">
       <CardContent className="p-6">
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-3xl font-bold text-gray-800">
+          <h2 className="text-3xl font-bold">
             {language === 'russian' ? 'Изучение Корана' : 'Құранды үйрену'}
           </h2>
           <Button
@@ -63,7 +63,7 @@ const QuranVerseVocabularyLearning: React.FC = () => {
           </Button>
         </div>
 
-        <div className="grid grid-cols-1 gap-6">
+        <div className="space-y-6">
           <ArabicVerse 
             verse={currentVerse} 
             knownWords={knownWords} 
