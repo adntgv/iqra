@@ -63,41 +63,43 @@ const QuranVerseVocabularyLearning: React.FC = () => {
           </Button>
         </div>
 
-        <ArabicVerse 
-          verse={currentVerse} 
-          knownWords={knownWords} 
-          setSelectedWord={setSelectedWord} 
-        />
-
-        <TranslationToggle 
-          showTranslation={showTranslation}
-          setShowTranslation={setShowTranslation}
-          translation={currentVerse.translation[language]}
-          language={language}
-        />
-
-        {selectedWord !== null && (
-          <WordDetails 
-            word={currentVerse.words[selectedWord]}
-            language={language}
-            isKnown={knownWords.has(selectedWord)}
-            toggleWordKnown={() => toggleWordKnown(selectedWord)}
+        <div className="grid grid-cols-1 gap-6">
+          <ArabicVerse 
+            verse={currentVerse} 
+            knownWords={knownWords} 
+            setSelectedWord={setSelectedWord} 
           />
-        )}
 
-        <NavigationControls 
-          prevVerse={prevVerse}
-          nextVerse={nextVerse}
-          surah={currentVerse.surah}
-          ayah={currentVerse.ayah}
-          language={language}
-        />
+          <TranslationToggle 
+            showTranslation={showTranslation}
+            setShowTranslation={setShowTranslation}
+            translation={currentVerse.translation[language]}
+            language={language}
+          />
 
-        <ProgressIndicator 
-          knownWordsCount={knownWords.size}
-          totalWordsCount={currentVerse.words.length}
-          language={language}
-        />
+          {selectedWord !== null && (
+            <WordDetails 
+              word={currentVerse.words[selectedWord]}
+              language={language}
+              isKnown={knownWords.has(selectedWord)}
+              toggleWordKnown={() => toggleWordKnown(selectedWord)}
+            />
+          )}
+
+          <NavigationControls 
+            prevVerse={prevVerse}
+            nextVerse={nextVerse}
+            surah={currentVerse.surah}
+            ayah={currentVerse.ayah}
+            language={language}
+          />
+
+          <ProgressIndicator 
+            knownWordsCount={knownWords.size}
+            totalWordsCount={currentVerse.words.length}
+            language={language}
+          />
+        </div>
       </CardContent>
     </Card>
   );
