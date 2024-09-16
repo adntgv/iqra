@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { versesData } from '../../lib/versesData';
 import { Verse } from '../../types';
 import ArabicVerse from './ArabicVerse';
@@ -12,11 +13,11 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 
 const QuranVerseVocabularyLearning: React.FC = () => {
+  const t = useTranslations('learn');
   const [currentVerseIndex, setCurrentVerseIndex] = useState<number>(0);
   const [showTranslation, setShowTranslation] = useState<boolean>(false);
   const [knownWords, setKnownWords] = useState<Set<number>>(new Set());
   const [selectedWord, setSelectedWord] = useState<number>(0);
-  const [language, setLanguage] = useState<'russian' | 'kazakh'>('russian');
   const [activeWordIndex, setActiveWordIndex] = useState<number>(0);
 
   const currentVerse: Verse = versesData[currentVerseIndex];
@@ -47,23 +48,12 @@ const QuranVerseVocabularyLearning: React.FC = () => {
     setShowTranslation(false);
   };
 
-  const toggleLanguage = () => {
-    setLanguage(language === 'russian' ? 'kazakh' : 'russian');
-  };
-
   return (
     <div className="w-full max-w-4xl mx-auto p-4 sm:p-6">
       <div className="flex flex-col sm:flex-row justify-between items-center mb-6">
         <h2 className="text-2xl sm:text-3xl font-bold text-primary mb-4 sm:mb-0">
-          {language === 'russian' ? 'Изучение Корана' : 'Құранды үйрену'}
+          {t('title')}
         </h2>
-        <Button
-          onClick={toggleLanguage}
-          variant="outline"
-          className="w-full sm:w-auto"
-        >
-          {language === 'russian' ? 'Қазақша' : 'Русский'}
-        </Button>
       </div>
 
       <div className="space-y-6">
@@ -84,13 +74,11 @@ const QuranVerseVocabularyLearning: React.FC = () => {
         <TranslationToggle 
           showTranslation={showTranslation}
           setShowTranslation={setShowTranslation}
-          translation={currentVerse.translation[language]}
-          language={language}
+          translation={currentVerse.translation}
         />
 
         <WordDetails 
           word={currentVerse.words[selectedWord]}
-          language={language}
           isKnown={knownWords.has(selectedWord)}
           toggleWordKnown={() => toggleWordKnown(selectedWord)}
         />
@@ -100,13 +88,11 @@ const QuranVerseVocabularyLearning: React.FC = () => {
           nextVerse={nextVerse}
           surah={currentVerse.surah}
           ayah={currentVerse.ayah}
-          language={language}
         />
 
         <ProgressIndicator 
           knownWordsCount={knownWords.size}
           totalWordsCount={currentVerse.words.length}
-          language={language}
         />
       </div>
     </div>

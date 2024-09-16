@@ -1,23 +1,21 @@
 import React from 'react';
+import { useTranslations } from 'next-intl';
 
 interface ProgressIndicatorProps {
   knownWordsCount: number;
   totalWordsCount: number;
-  language: 'russian' | 'kazakh';
 }
 
 const ProgressIndicator: React.FC<ProgressIndicatorProps> = ({
   knownWordsCount,
   totalWordsCount,
-  language,
 }) => {
+  const t = useTranslations('learn');
+
   return (
     <div className="text-center mt-6">
       <p className="text-lg font-semibold text-gray-700">
-        {language === 'russian' 
-          ? `Изучено слов: ${knownWordsCount} из ${totalWordsCount}`
-          : `Үйренген сөздер: ${knownWordsCount} ${totalWordsCount} ішінен`
-        }
+        {t('wordsLearned')}: {knownWordsCount} {t('of')} {totalWordsCount}
       </p>
     </div>
   );

@@ -1,28 +1,32 @@
 import React from 'react';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
 const Footer = () => {
+  const t = useTranslations('footer');
+  const common = useTranslations('common');
+
   return (
     <footer className="border-t bg-background">
       <div className="container mx-auto py-8 px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-lg font-semibold mb-4">About Iqra</h3>
+            <h3 className="text-lg font-semibold mb-4">{t('aboutIqra')}</h3>
             <p className="text-muted-foreground">
-              Iqra is a platform dedicated to helping people learn Arabic and understand the Quran through interactive lessons and vocabulary building.
+              {t('aboutDescription')}
             </p>
           </div>
           <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+            <h3 className="text-lg font-semibold mb-4">{t('quickLinks')}</h3>
             <ul className="space-y-2">
-              <li><Link href="/" className="text-muted-foreground hover:text-primary">Home</Link></li>
-              <li><Link href="/learn" className="text-muted-foreground hover:text-primary">Learn</Link></li>
-              <li><Link href="/about" className="text-muted-foreground hover:text-primary">About</Link></li>
-              <li><Link href="/contact" className="text-muted-foreground hover:text-primary">Contact</Link></li>
+              <li><Link href="/" className="text-muted-foreground hover:text-primary">{common('home')}</Link></li>
+              <li><Link href="/learn" className="text-muted-foreground hover:text-primary">{common('learn')}</Link></li>
+              <li><Link href="/about" className="text-muted-foreground hover:text-primary">{common('about')}</Link></li>
+              <li><Link href="/contact" className="text-muted-foreground hover:text-primary">{common('contact')}</Link></li>
             </ul>
           </div>
           <div>
-            <h3 className="text-lg font-semibold mb-4">Connect</h3>
+            <h3 className="text-lg font-semibold mb-4">{t('connect')}</h3>
             <ul className="space-y-2">
               <li><a href="#" className="text-muted-foreground hover:text-primary">Facebook</a></li>
               <li><a href="#" className="text-muted-foreground hover:text-primary">Twitter</a></li>
@@ -31,7 +35,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="mt-8 text-center text-muted-foreground">
-          <p>© 2024 Iqra. All rights reserved.</p>
+          <p>{t('copyright')}</p>
         </div>
       </div>
     </footer>
