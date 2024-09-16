@@ -25,10 +25,10 @@ const Navbar = () => {
           
           <div className="hidden md:flex items-center space-x-4">
             <Button variant="ghost" asChild className="text-foreground hover:text-primary">
-              <Link href={pathname}>{t('home')}</Link>
+              <Link href="/">{t('home')}</Link>
             </Button>
             <Button variant="ghost" asChild className="text-foreground hover:text-primary">
-              <Link href={`${pathname}/learn`}>{t('learn')}</Link>
+              <Link href={`/learn`}>{t('learn')}</Link>
             </Button>
             <LocaleSwitcher />
             <ThemeToggle />
@@ -45,10 +45,10 @@ const Navbar = () => {
           <div className="md:hidden py-4 bg-background/95 backdrop-blur-sm">
             <div className="flex flex-col space-y-2">
               <Button variant="ghost" asChild onClick={toggleMenu} className="text-foreground hover:text-primary">
-                <Link href={pathname}>{t('home')}</Link>
+                <Link href="/">{t('home')}</Link>
               </Button>
               <Button variant="ghost" asChild onClick={toggleMenu} className="text-foreground hover:text-primary">
-                <Link href={`${pathname}/learn`}>{t('learn')}</Link>
+                <Link href={`/learn`}>{t('learn')}</Link>
               </Button>
               <LocaleSwitcher />
               <ThemeToggle />
