@@ -15,7 +15,7 @@ const QuranVerseVocabularyLearning: React.FC = () => {
   const [currentVerseIndex, setCurrentVerseIndex] = useState<number>(0);
   const [showTranslation, setShowTranslation] = useState<boolean>(false);
   const [knownWords, setKnownWords] = useState<Set<number>>(new Set());
-  const [selectedWord, setSelectedWord] = useState<number | null>(null);
+  const [selectedWord, setSelectedWord] = useState<number>(0);
   const [language, setLanguage] = useState<'russian' | 'kazakh'>('russian');
 
   const currentVerse: Verse = versesData[currentVerseIndex];
@@ -34,13 +34,13 @@ const QuranVerseVocabularyLearning: React.FC = () => {
 
   const nextVerse = () => {
     setCurrentVerseIndex((prevIndex) => (prevIndex + 1) % versesData.length);
-    setSelectedWord(null);
+    setSelectedWord(0);
     setShowTranslation(false);
   };
 
   const prevVerse = () => {
     setCurrentVerseIndex((prevIndex) => (prevIndex - 1 + versesData.length) % versesData.length);
-    setSelectedWord(null);
+    setSelectedWord(0);
     setShowTranslation(false);
   };
 
@@ -81,14 +81,12 @@ const QuranVerseVocabularyLearning: React.FC = () => {
           language={language}
         />
 
-        {selectedWord !== null && (
-          <WordDetails 
-            word={currentVerse.words[selectedWord]}
-            language={language}
-            isKnown={knownWords.has(selectedWord)}
-            toggleWordKnown={() => toggleWordKnown(selectedWord)}
-          />
-        )}
+        <WordDetails 
+          word={currentVerse.words[selectedWord]}
+          language={language}
+          isKnown={knownWords.has(selectedWord)}
+          toggleWordKnown={() => toggleWordKnown(selectedWord)}
+        />
 
         <NavigationControls 
           prevVerse={prevVerse}
