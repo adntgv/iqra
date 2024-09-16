@@ -17,6 +17,7 @@ const QuranVerseVocabularyLearning: React.FC = () => {
   const [knownWords, setKnownWords] = useState<Set<number>>(new Set());
   const [selectedWord, setSelectedWord] = useState<number>(0);
   const [language, setLanguage] = useState<'russian' | 'kazakh'>('russian');
+  const [activeWordIndex, setActiveWordIndex] = useState<number>(0);
 
   const currentVerse: Verse = versesData[currentVerseIndex];
 
@@ -35,12 +36,14 @@ const QuranVerseVocabularyLearning: React.FC = () => {
   const nextVerse = () => {
     setCurrentVerseIndex((prevIndex) => (prevIndex + 1) % versesData.length);
     setSelectedWord(0);
+    setActiveWordIndex(0);
     setShowTranslation(false);
   };
 
   const prevVerse = () => {
     setCurrentVerseIndex((prevIndex) => (prevIndex - 1 + versesData.length) % versesData.length);
     setSelectedWord(0);
+    setActiveWordIndex(0);
     setShowTranslation(false);
   };
 
@@ -69,7 +72,11 @@ const QuranVerseVocabularyLearning: React.FC = () => {
             <ArabicVerse 
               verse={currentVerse} 
               knownWords={knownWords} 
-              setSelectedWord={setSelectedWord} 
+              setSelectedWord={(index) => {
+                setSelectedWord(index);
+                setActiveWordIndex(index);
+              }}
+              activeWordIndex={activeWordIndex}
             />
           </CardContent>
         </Card>

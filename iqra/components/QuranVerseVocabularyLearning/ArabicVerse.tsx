@@ -6,8 +6,9 @@ interface ArabicVerseProps {
   verse: Verse;
   knownWords: Set<number>;
   setSelectedWord: (index: number) => void;
+  activeWordIndex: number;
 }
-const ArabicVerse: React.FC<ArabicVerseProps> = ({ verse, knownWords, setSelectedWord }) => {
+const ArabicVerse: React.FC<ArabicVerseProps> = ({ verse, knownWords, setSelectedWord, activeWordIndex }) => {
   return (
     <div className="flex flex-col items-center justify-center space-y-4 sm:space-y-6">
       <div className="flex flex-wrap justify-center items-center mb-2 sm:mb-4 arabic-text" dir="rtl">
@@ -21,7 +22,8 @@ const ArabicVerse: React.FC<ArabicVerseProps> = ({ verse, knownWords, setSelecte
                 ? "text-green-600 dark:text-green-400" 
                 : "text-primary",
               "relative group",
-              index === 0 && "bg-primary/10"  // Add this line to highlight the first word
+              index === activeWordIndex && "text-4xl sm:text-6xl text-primary transform -translate-y-1",
+              index !== activeWordIndex && "underline decoration-primary/20 decoration-dashed underline-offset-4 decoration-2",
             )}
             onClick={() => setSelectedWord(index)}
           >

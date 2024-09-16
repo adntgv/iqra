@@ -54,7 +54,10 @@ const config: Config = {
 				'4': 'hsl(var(--chart-4))',
 				'5': 'hsl(var(--chart-5))'
 			}
-		  }
+		},
+		boxShadow: {
+			'soft-lg': '0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025)',
+		},
   	}
   },
   plugins: [require("tailwindcss-animate")],
