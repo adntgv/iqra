@@ -7,16 +7,15 @@ interface WordDetailsProps {
   isKnown: boolean;
   toggleWordKnown: () => void;
 }
-
 const WordDetails: React.FC<WordDetailsProps> = ({ word, language, isKnown, toggleWordKnown }) => {
   return (
-    <div className="mb-6 p-4 sm:p-6 bg-blue-50 rounded-lg shadow-inner">
-      <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-blue-800">{word.arabic}</h3>
-      <p className="mb-2 text-sm sm:text-base"><strong>{language === 'russian' ? 'Перевод:' : 'Аударма:'}</strong> {word[language]}</p>
-      <p className="mb-2 text-sm sm:text-base"><strong>{language === 'russian' ? 'Транслитерация:' : 'Транслитерация:'}</strong> {word.transliteration}</p>
-      <p className="mb-2 text-sm sm:text-base"><strong>{language === 'russian' ? 'Корень слова:' : 'Сөз түбірі:'}</strong> {word.rootLetters}</p>
-      <p className="mb-2 text-sm sm:text-base"><strong>{language === 'russian' ? 'Использование:' : 'Қолданылуы:'}</strong> {word.usage}</p>
-      <p className="mb-4 text-sm sm:text-base"><strong>{language === 'russian' ? 'Частота в Коране:' : 'Құрандағы жиілігі:'}</strong> {word.frequency}</p>
+    <div className="mb-6 p-4 sm:p-6 bg-secondary rounded-lg shadow-inner">
+      <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-primary">{word.arabic}</h3>
+      <p className="mb-2 text-sm sm:text-base"><strong className="text-primary">{language === 'russian' ? 'Перевод:' : 'Аударма:'}</strong> <span className="text-foreground">{word[language]}</span></p>
+      <p className="mb-2 text-sm sm:text-base"><strong className="text-primary">{language === 'russian' ? 'Транслитерация:' : 'Транслитерация:'}</strong> <span className="text-foreground">{word.transliteration}</span></p>
+      <p className="mb-2 text-sm sm:text-base"><strong className="text-primary">{language === 'russian' ? 'Корень слова:' : 'Сөз түбірі:'}</strong> <span className="text-foreground">{word.rootLetters}</span></p>
+      <p className="mb-2 text-sm sm:text-base"><strong className="text-primary">{language === 'russian' ? 'Использование:' : 'Қолданылуы:'}</strong> <span className="text-foreground">{word.usage}</span></p>
+      <p className="mb-4 text-sm sm:text-base"><strong className="text-primary">{language === 'russian' ? 'Частота в Коране:' : 'Құрандағы жиілігі:'}</strong> <span className="text-foreground">{word.frequency}</span></p>
       <button
         onClick={toggleWordKnown}
         className={`w-full px-4 sm:px-6 py-2 sm:py-3 rounded-full ${

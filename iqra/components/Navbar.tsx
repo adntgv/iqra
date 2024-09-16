@@ -3,11 +3,12 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { Button } from "@/components/ui/button";
-import { MoonIcon, SunIcon, MenuIcon, XIcon } from 'lucide-react';
-import { useTheme } from 'next-themes';
+import { MenuIcon, XIcon } from 'lucide-react';
+import dynamic from 'next/dynamic';
+
+const ThemeToggle = dynamic(() => import('../components/themeToggle'), { ssr: false });
 
 const Navbar = () => {
-  const { theme, setTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -25,13 +26,7 @@ const Navbar = () => {
             <Button variant="ghost" asChild>
               <Link href="/learn">Learn</Link>
             </Button>
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-            >
-              {theme === 'dark' ? <SunIcon className="h-[1.2rem] w-[1.2rem]" /> : <MoonIcon className="h-[1.2rem] w-[1.2rem]" />}
-            </Button>
+            <ThemeToggle />
           </div>
 
           <div className="md:hidden">
@@ -50,15 +45,7 @@ const Navbar = () => {
               <Button variant="ghost" asChild onClick={toggleMenu}>
                 <Link href="/learn">Learn</Link>
               </Button>
-              <Button
-                variant="outline"
-                onClick={() => {
-                  setTheme(theme === 'dark' ? 'light' : 'dark');
-                  toggleMenu();
-                }}
-              >
-                {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
-              </Button>
+              <ThemeToggle />
             </div>
           </div>
         )}
