@@ -67,6 +67,9 @@
         "crypto": "Криптовалюта",
         "close": "Жабу",
         "donateNow": "Қазір қолдау",
-        "kaspi": "Kaspi"
+        "kaspi": "Kaspi",
+        "offline": "Offline",
+        "offlineTitle": "Offline",
+        "offlineMessage": "Сіз желіге қосалқы. Интернетіңізді тексеріңіз."
     }
 }

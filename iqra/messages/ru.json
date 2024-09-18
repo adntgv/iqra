@@ -67,6 +67,9 @@
         "crypto": "Криптовалюта",
         "close": "Закрыть",
         "donateNow": "Пожертвовать сейчас",
-        "kaspi": "Kaspi"
+        "kaspi": "Kaspi",
+        "offline": "Offline",
+        "offlineTitle": "Offline",
+        "offlineMessage": "Вы не в сети. Пожалуйста, проверьте свое интернет-соединение."
     }
 }

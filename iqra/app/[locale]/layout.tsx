@@ -8,6 +8,8 @@ import {getMessages} from 'next-intl/server';
 export const metadata: Metadata = {
   title: 'Iqra App',
   description: 'Learn Arabic and understand the Quran',
+  manifest: '/manifest.json',
+  themeColor: '#000000',
 }
 
 export default async function RootLayout({

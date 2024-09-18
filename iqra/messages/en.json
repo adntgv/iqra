@@ -67,6 +67,9 @@
         "crypto": "Cryptocurrency",
         "close": "Close",
         "donateNow": "Donate Now",
-        "kaspi": "Kaspi"
+        "kaspi": "Kaspi",
+        "offline": "Offline",
+        "offlineTitle": "Offline",
+        "offlineMessage": "You are offline. Please check your internet connection."
     }
 }
