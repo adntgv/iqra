@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { useTranslations } from 'next-intl';
-import { Play } from 'lucide-react';
+import { Play, Pause } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -11,14 +11,29 @@ interface TranslationToggleProps {
     russian: string;
     kazakh: string;
   };
+  audioUrl: string;
 }
 
 const TranslationToggle: React.FC<TranslationToggleProps> = ({
   showTranslation,
   setShowTranslation,
   translation,
+  audioUrl,
 }) => {
   const t = useTranslations('learn');
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  const toggleAudio = () => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
 
   return (
     <div className="space-y-4">
@@ -40,14 +55,15 @@ const TranslationToggle: React.FC<TranslationToggleProps> = ({
           {showTranslation ? t('hideTranslation') : t('showTranslation')}
         </Button>
         <Button
-          onClick={() => {/* Implement audio playback */}}
+          onClick={toggleAudio}
           variant="outline"
           className="w-full sm:w-auto"
         >
-          <Play className="h-4 w-4 mr-2" />
-          {t('listen')}
+          {isPlaying ? <Pause className="h-4 w-4 mr-2" /> : <Play className="h-4 w-4 mr-2" />}
+          {isPlaying ? t('pause') : t('listen')}
         </Button>
       </div>
+      <audio ref={audioRef} src={audioUrl} onEnded={() => setIsPlaying(false)} />
     </div>
   );
 };

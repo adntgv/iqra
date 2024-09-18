@@ -49,6 +49,10 @@ const QuranVerseVocabularyLearning: React.FC = () => {
     setShowTranslation(false);
   };
 
+  const getAudioUrl = (verseNumber: number) => {
+    return `https://cdn.islamic.network/quran/audio/128/ar.alafasy/${verseNumber}.mp3`;
+  };
+
   return (
     <div className="w-full max-w-4xl mx-auto p-4 sm:p-6">
       <div className="space-y-6">
@@ -77,6 +81,7 @@ const QuranVerseVocabularyLearning: React.FC = () => {
           showTranslation={showTranslation}
           setShowTranslation={setShowTranslation}
           translation={currentVerse.translation}
+          audioUrl={getAudioUrl(currentVerse.number)}
         />
 
         <WordDetails 

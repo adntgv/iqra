@@ -46,7 +46,8 @@ const AlFatiha: Verse[] = [{
     },
   ],
   surah: 1,
-  ayah: 1
+  ayah: 1,
+  number: 1
 },
 {
   arabic: 'الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ',
@@ -94,7 +95,8 @@ const AlFatiha: Verse[] = [{
     },
   ],
   surah: 1,
-  ayah: 2
+  ayah: 2,
+  number: 2
 },
 {
   arabic: 'الرَّحْمَٰنِ الرَّحِيمِ',
@@ -124,7 +126,8 @@ const AlFatiha: Verse[] = [{
     },
   ],
   surah: 1,
-  ayah: 3
+  ayah: 3,
+  number: 3
 },
 {
   arabic: 'مَالِكِ يَوْمِ الدِّينِ',
@@ -163,7 +166,8 @@ const AlFatiha: Verse[] = [{
     },
   ],
   surah: 1,
-  ayah: 4
+  ayah: 4,
+  number: 4
 },
 {
   arabic: 'إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ',
@@ -202,7 +206,8 @@ const AlFatiha: Verse[] = [{
     },
   ],
   surah: 1,
-  ayah: 5
+  ayah: 5,
+  number: 5
 },
 {
   arabic: 'اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ',
@@ -241,7 +246,8 @@ const AlFatiha: Verse[] = [{
     },
   ],
   surah: 1,
-  ayah: 6
+  ayah: 6,
+  number: 6
 },
 {
   arabic: 'صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ',
@@ -298,7 +304,8 @@ const AlFatiha: Verse[] = [{
     },
   ],
   surah: 1,
-  ayah: 7
+  ayah: 7,
+  number: 7
 }];
 
 export const versesData: Verse[] = AlFatiha;
