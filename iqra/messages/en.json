@@ -47,7 +47,9 @@
             "en": "English",
             "ru": "Russian",
             "kk": "Kazakh"
-        }
+        },
+        "donationPrompt": "Help us continue providing free Quranic education",
+        "donate": "Donate"
     },
     "footer": {
         "aboutIqra": "About Iqra",
@@ -55,5 +57,16 @@
         "quickLinks": "Quick Links",
         "connect": "Connect",
         "copyright": "© 2024 Iqra. All rights reserved."
+    },
+    "donation": {
+        "modalTitle": "Support Iqra",
+        "modalDescription": "Your donation helps us continue our mission of providing free Quranic education to everyone.",
+        "donationMethods": "Donation Methods",
+        "bankTransfer": "Bank Transfer",
+        "paypal": "PayPal",
+        "crypto": "Cryptocurrency",
+        "close": "Close",
+        "donateNow": "Donate Now",
+        "kaspi": "Kaspi"
     }
 }

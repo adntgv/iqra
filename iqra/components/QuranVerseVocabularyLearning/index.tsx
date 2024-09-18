@@ -10,6 +10,7 @@ import WordDetails from './WordDetails';
 import NavigationControls from './NavigationControls';
 import VerseNavigation from './VerseNavigation';
 import { Card, CardContent } from "@/components/ui/card"
+import DonationPrompt from '../DonationPrompt';
 
 const QuranVerseVocabularyLearning: React.FC = () => {
   const t = useTranslations('learn');
@@ -90,12 +91,9 @@ const QuranVerseVocabularyLearning: React.FC = () => {
           toggleWordKnown={() => toggleWordKnown(selectedWord)}
         />
 
-        <VerseNavigation
-          currentVerseIndex={currentVerseIndex}
-          totalVerses={versesData.length}
-          onPrevious={prevVerse}
-          onNext={nextVerse}
-        />
+        <div className="mt-8">
+          <DonationPrompt />
+        </div>
       </div>
     </div>
   );
