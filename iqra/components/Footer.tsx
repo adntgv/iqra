@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
+import {Link} from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
 
 const Footer = () => {
@@ -28,9 +28,7 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">{t('connect')}</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-muted-foreground hover:text-primary">Facebook</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary">Twitter</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary">Instagram</a></li>
+              <li><a href="https://t.me/adntgv" className="text-muted-foreground hover:text-primary">Telegram</a></li>
             </ul>
           </div>
         </div>

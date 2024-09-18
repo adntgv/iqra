@@ -34,7 +34,8 @@
         "of": "of",
         "showTranslation": "Show Translation",
         "hideTranslation": "Hide Translation",
-        "listen": "Listen"
+        "listen": "Listen",
+        "verse": "Verse"
     },
     "common": {
         "iqra": "Iqra",

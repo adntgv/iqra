@@ -8,7 +8,7 @@ import ArabicVerse from './ArabicVerse';
 import TranslationToggle from './TranslationToggle';
 import WordDetails from './WordDetails';
 import NavigationControls from './NavigationControls';
-import ProgressIndicator from './ProgressIndicator';
+import VerseNavigation from './VerseNavigation';
 import { Card, CardContent } from "@/components/ui/card"
 
 const QuranVerseVocabularyLearning: React.FC = () => {
@@ -35,13 +35,15 @@ const QuranVerseVocabularyLearning: React.FC = () => {
 
   const nextVerse = () => {
     setCurrentVerseIndex((prevIndex) => (prevIndex + 1) % versesData.length);
-    setSelectedWord(0);
-    setActiveWordIndex(0);
-    setShowTranslation(false);
+    resetVerseState();
   };
 
   const prevVerse = () => {
     setCurrentVerseIndex((prevIndex) => (prevIndex - 1 + versesData.length) % versesData.length);
+    resetVerseState();
+  };
+
+  const resetVerseState = () => {
     setSelectedWord(0);
     setActiveWordIndex(0);
     setShowTranslation(false);
@@ -50,7 +52,6 @@ const QuranVerseVocabularyLearning: React.FC = () => {
   return (
     <div className="w-full max-w-4xl mx-auto p-4 sm:p-6">
       <div className="space-y-6">
-
         <NavigationControls 
           prevVerse={prevVerse}
           nextVerse={nextVerse}
@@ -82,6 +83,13 @@ const QuranVerseVocabularyLearning: React.FC = () => {
           word={currentVerse.words[selectedWord]}
           isKnown={knownWords.has(selectedWord)}
           toggleWordKnown={() => toggleWordKnown(selectedWord)}
+        />
+
+        <VerseNavigation
+          currentVerseIndex={currentVerseIndex}
+          totalVerses={versesData.length}
+          onPrevious={prevVerse}
+          onNext={nextVerse}
         />
       </div>
     </div>

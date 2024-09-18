@@ -1,5 +1,4 @@
 import QuranVerseVocabularyLearning from '@/components/QuranVerseVocabularyLearning'
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default function Learn() {
   return (
