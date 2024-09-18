@@ -28,7 +28,7 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">{t('connect')}</h3>
             <ul className="space-y-2">
-              <li><a href="https://t.me/adntgv" className="text-muted-foreground hover:text-primary">Telegram</a></li>
+              <li><a href="https://t.me/iqra_app" className="text-muted-foreground hover:text-primary">Telegram</a></li>
             </ul>
           </div>
         </div>
