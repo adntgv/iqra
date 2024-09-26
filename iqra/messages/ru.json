@@ -15,13 +15,19 @@
     "testimonialsDescription": "Наши ученики углубили свое понимание Корана с помощью нашей платформы.",
     "getStarted": "Начать сейчас",
     "startLearning": "Начать сейчас",
-    "chapters": "Сүрелер",
-    "alFatihaDescription": "Ашылу - Құрандағы ең көп айтылған сүре",
-    "currentLesson": "Қазіргі сабақ",
-    "currentLessonDescription": "Құрандағы ең көп айтылған сүремен жалғастырыңыз",
-    "continueLesson": "Сабақты жалғастыру",
-    "basics": "Негіздер",
-    "alphabet": "Араб әліпбиі"
+    "startLearningDescription": "Начните свое путешествие по Корану сегодня",
+    "startLearningButton": "Начать сейчас",
+    "startLearningButtonDescription": "Начните свое путешествие по Корану сегодня",
+    "currentVerse": "Текущий аят",
+    "currentWord": "Текущее слово",
+    "chapters": "Суры",
+    "alFatihaDescription": "Открытие - самая часто читаемая сура в Коране",
+    "currentLesson": "Текущий урок",
+    "currentLessonDescription": "Продолжите изучение суры, которая читается чаще всего в Коране",
+    "continueLesson": "Продолжить урок",
+    "basics": "Основы",
+    "alphabet": "Арабский алфавит"
+
   },
   "learn": {
     "title": "Изучайте арабский с Iqra",

@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
-import { ArrowRight, BookOpen, AlignLeft } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import LocaleSwitcher from '@/components/LocaleSwitcher';

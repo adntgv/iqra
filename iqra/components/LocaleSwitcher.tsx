@@ -22,6 +22,7 @@ export default function LocaleSwitcher() {
           onClick={() => switchLocale(l)}
           variant={l === locale ? 'default' : 'outline'}
           size="sm"
+          className={`transition-all duration-300 ${l === locale ? 'ring-2 ring-primary' : 'hover:ring-2 hover:ring-primary/50'}`}
         >
           {t(`locale.${l}`)}
         </Button>
