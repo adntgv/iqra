@@ -57,7 +57,7 @@ const AlphabetLearning: React.FC = () => {
       <h1 className="text-3xl font-bold mb-6 text-center">{t('title')}</h1>
       <Card className="mb-8">
         <CardContent className="p-6 text-center">
-          <div className="text-8xl mb-4 font-arabic">{currentLetter.letter}</div>
+          <div className="text-8xl mb-4 font-arabic text-primary">{currentLetter.letter}</div>
           <h2 className="text-2xl font-semibold mb-2">{currentLetter.name}</h2>
           <p className="text-xl text-muted-foreground">{t('transliteration')}: {currentLetter.transliteration}</p>
         </CardContent>

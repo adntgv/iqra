@@ -23,9 +23,9 @@ const WordDetails: React.FC<WordDetailsProps> = ({ word, isKnown, toggleWordKnow
         onClick={toggleWordKnown}
         className={`w-full px-4 sm:px-6 py-2 sm:py-3 rounded-full ${
           isKnown 
-            ? 'bg-red-500 hover:bg-red-600' 
-            : 'bg-green-500 hover:bg-green-600'
-        } text-white transition duration-300 shadow-md text-sm sm:text-base`}
+            ? 'bg-accent hover:bg-accent/90'
+            : 'bg-background hover:bg-accent text-primary'
+        } transition duration-300 shadow-md text-sm sm:text-base`}
       >
         {isKnown ? t('markAsUnknown') : t('markAsKnown')}
       </button>

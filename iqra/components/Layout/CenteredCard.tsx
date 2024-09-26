@@ -6,9 +6,9 @@ interface CenteredCardProps {
 
 const CenteredCard: React.FC<CenteredCardProps> = ({ children }) => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen flex items-center justify-center bg-background py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl w-full space-y-8">
-        <div className="bg-white shadow-2xl rounded-lg overflow-hidden">
+        <div className="bg-secondary shadow-2xl rounded-lg overflow-hidden">
           {children}
         </div>
       </div>

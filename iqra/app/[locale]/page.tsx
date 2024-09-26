@@ -66,7 +66,7 @@ export default function Home() {
               <Link
                 key={lesson.id}
                 href={`/learn?lesson=${lesson.id}&surah=${lesson.verses[0].surah}&ayah=${lesson.verses[0].ayah}`}
-                className="block p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow"
+                className="block p-6 rounded-lg "
               >
                 <h3 className="text-xl font-semibold mb-2">{lesson.title}</h3>
                 <p className="text-gray-600">{lesson.description}</p>

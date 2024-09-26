@@ -14,7 +14,7 @@ const DonationModal: React.FC<DonationModalProps> = ({ isOpen, onClose }) => {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent>
+      <DialogContent className="rounded-lg">
         <DialogHeader>
           <DialogTitle>{t('modalTitle')}</DialogTitle>
           <DialogDescription>{t('modalDescription')}</DialogDescription>
