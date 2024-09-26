@@ -91,6 +91,7 @@ const QuranVerseVocabularyLearning: React.FC = () => {
                 setActiveWordIndex(index);
               }}
               activeWordIndex={activeWordIndex}
+              audioUrl={getAudioUrl(currentVerse.number)}
             />
           </CardContent>
         </Card>
@@ -99,7 +100,6 @@ const QuranVerseVocabularyLearning: React.FC = () => {
           showTranslation={showTranslation}
           setShowTranslation={setShowTranslation}
           translation={currentVerse.translation}
-          audioUrl={getAudioUrl(currentVerse.number)}
         />
 
         <WordDetails 
