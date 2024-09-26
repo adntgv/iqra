@@ -57,7 +57,10 @@
     "incorrectSelection": "Қате таңдау. Қайтадан қараңыз.",
     "learnedWords": "Үйренілген сөздер",
     "noLearnedWords": "Үйренбеген сөздер жоқ.",
-    "remove": "Өшіру"
+    "remove": "Өшіру",
+    "startLearning": "Құран саяхатыңызды бүгін бастаңыз",
+    "lesson": "Сабақ",
+    "pause": "Тоқтату"
   },
   "common": {
     "iqra": "Iqra",
@@ -71,7 +74,8 @@
       "kk": "Қазақ"
     },
     "donationPrompt": "Құранды түсінуге көмектесетін ең жақсы платформаны құруға көмектесу",
-    "donate": "Қолдау"
+    "donate": "Қолдау",
+    "learnedWords": "Үйренілген сөздер"
   },
   "footer": {
     "aboutIqra": "Iqra туралы",

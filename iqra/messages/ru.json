@@ -62,7 +62,10 @@
     "incorrectSelection": "Неверный выбор. Попробуйте снова.",
     "learnedWords": "Изученные слова",
     "noLearnedWords": "Вы еще не изучили ни одного слова.",
-    "remove": "Удалить"
+    "remove": "Удалить",
+    "startLearning": "Начать изучение",
+    "lesson": "Урок",
+    "pause": "Пауза"
   },
   "common": {
     "iqra": "Iqra",
@@ -76,7 +79,8 @@
       "kk": "Казахский"
     },
     "donationPrompt": "Помогите нам создать лучшую платформу для изучения Корана",
-    "donate": "Пожертвовать"
+    "donate": "Пожертвовать",
+    "learnedWords": "Изученные слова"
   },
   "footer": {
     "aboutIqra": "О Iqra",
