@@ -21,7 +21,8 @@
     "currentLessonDescription": "Құрандағы ең көп айтылған сүремен жалғастырыңыз",
     "continueLesson": "Сабақты жалғастыру",
     "basics": "Негіздер",
-    "alphabet": "Араб әліпбиі"
+    "alphabet": "Араб әліпбиі",
+    "words": "Сөздер"
   },
   "learn": {
     "title": "Iqra-мен араб тілін үйреніңіз",
@@ -53,7 +54,10 @@
       "next": "Келесі",
       "previous": "Алдыңғы"
     },
-    "incorrectSelection": "Қате таңдау. Қайтадан қараңыз."
+    "incorrectSelection": "Қате таңдау. Қайтадан қараңыз.",
+    "learnedWords": "Үйренілген сөздер",
+    "noLearnedWords": "Үйренбеген сөздер жоқ.",
+    "remove": "Өшіру"
   },
   "common": {
     "iqra": "Iqra",

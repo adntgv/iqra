@@ -50,6 +50,9 @@ const Navbar = () => {
               <Button variant="ghost" asChild onClick={toggleMenu} className="text-foreground hover:text-primary">
                 <Link href={`/learn`}>{t('learn')}</Link>
               </Button>
+              <Button variant="ghost" asChild onClick={toggleMenu} className="text-foreground hover:text-primary">
+                <Link href="/learn/words">{t('learnedWords')}</Link>
+              </Button>
               <LocaleSwitcher />
               <ThemeToggle />
             </div>

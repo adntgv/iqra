@@ -26,26 +26,35 @@ const QuranVerseVocabularyLearning: React.FC = () => {
   const [knownWords, setKnownWords] = useState<Set<number>>(new Set());
   const [selectedWord, setSelectedWord] = useState<number>(0);
   const [activeWordIndex, setActiveWordIndex] = useState<number>(0);
+  const [learnedWords, setLearnedWords] = useState<string[]>([]);
 
   useEffect(() => {
-    const lesson = lessons[lessonId];
-    setCurrentLesson(lesson);
-    const verseIndex = lesson.verses.findIndex(
-      verse => verse.surah === initialSurah && verse.ayah === initialAyah
-    );
-    setCurrentVerseIndex(verseIndex >= 0 ? verseIndex : 0);
-  }, [lessonId, initialSurah, initialAyah]);
+    const storedKnownWords = localStorage.getItem(`knownWords_${lessonId}`);
+    if (storedKnownWords) {
+      setKnownWords(new Set(JSON.parse(storedKnownWords)));
+    }
+
+    const storedLearnedWords = localStorage.getItem('learnedWords');
+    if (storedLearnedWords) {
+      setLearnedWords(JSON.parse(storedLearnedWords));
+    }
+  }, [lessonId]);
 
   const currentVerse: Verse = currentLesson.verses[currentVerseIndex];
 
   const toggleWordKnown = (wordIndex: number) => {
     setKnownWords(prevKnownWords => {
       const newKnownWords = new Set(prevKnownWords);
+      const word = currentVerse.words[wordIndex].arabic;
       if (newKnownWords.has(wordIndex)) {
         newKnownWords.delete(wordIndex);
+        setLearnedWords(prev => prev.filter(w => w !== word));
       } else {
         newKnownWords.add(wordIndex);
+        setLearnedWords(prev => [...prev, word]);
       }
+      localStorage.setItem(`knownWords_${lessonId}`, JSON.stringify(Array.from(newKnownWords)));
+      localStorage.setItem('learnedWords', JSON.stringify(learnedWords));
       return newKnownWords;
     });
   };

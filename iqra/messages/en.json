@@ -10,7 +10,8 @@
         "chapters": "Chapters",
         "alFatihaDescription": "The Opening - Learn the most recited surah in the Quran",
         "startLearning": "Start Your Quranic Journey Today",
-        "getStarted": "Get Started Now"
+        "getStarted": "Get Started Now",
+        "words": "Words"
     },
     "learn": {
         "title": "Learn Arabic with Iqra",
@@ -42,7 +43,10 @@
             "transliteration": "Transliteration",
             "next": "Next",
             "previous": "Previous"
-        }
+        },
+        "learnedWords": "Learned Words",
+        "noLearnedWords": "You haven't learned any words yet.",
+        "remove": "Remove"
     },
     "common": {
         "iqra": "Iqra",

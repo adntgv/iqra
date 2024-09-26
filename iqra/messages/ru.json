@@ -26,7 +26,8 @@
     "currentLessonDescription": "Продолжите изучение суры, которая читается чаще всего в Коране",
     "continueLesson": "Продолжить урок",
     "basics": "Основы",
-    "alphabet": "Арабский алфавит"
+    "alphabet": "Арабский алфавит",
+    "words": "Слова"
   },
   "learn": {
     "title": "Изучайте арабский с Iqra",
@@ -58,7 +59,10 @@
       "next": "Следующая",
       "previous": "Предыдущая"
     },
-    "incorrectSelection": "Неверный выбор. Попробуйте снова."
+    "incorrectSelection": "Неверный выбор. Попробуйте снова.",
+    "learnedWords": "Изученные слова",
+    "noLearnedWords": "Вы еще не изучили ни одного слова.",
+    "remove": "Удалить"
   },
   "common": {
     "iqra": "Iqra",

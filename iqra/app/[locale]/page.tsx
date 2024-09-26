@@ -50,7 +50,11 @@ export default function Home() {
                     {t('alphabet')}
                   </Link>
                 </li>
-                {/* Add more basic lessons here */}
+                <li>
+                  <Link href="/learn/words" className="text-primary hover:underline">
+                    {t('words')}
+                  </Link>
+                </li>
               </ul>
             </CardContent>
           </Card>

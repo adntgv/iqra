@@ -10,7 +10,7 @@ export default function LocaleSwitcher() {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
-  const switchLocale = (newLocale: "en" | "ru" | "kk") => {
+  const switchLocale = (newLocale: "kk" | "ru" | "en") => {
     router.replace(pathname, { locale: newLocale });
   };
 
