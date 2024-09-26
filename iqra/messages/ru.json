@@ -27,7 +27,6 @@
     "continueLesson": "Продолжить урок",
     "basics": "Основы",
     "alphabet": "Арабский алфавит"
-
   },
   "learn": {
     "title": "Изучайте арабский с Iqra",
@@ -58,7 +57,8 @@
       "transliteration": "Транслитерация",
       "next": "Следующая",
       "previous": "Предыдущая"
-    }
+    },
+    "incorrectSelection": "Неверный выбор. Попробуйте снова."
   },
   "common": {
     "iqra": "Iqra",

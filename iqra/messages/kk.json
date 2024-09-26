@@ -52,7 +52,8 @@
       "transliteration": "Транслитерация",
       "next": "Келесі",
       "previous": "Алдыңғы"
-    }
+    },
+    "incorrectSelection": "Қате таңдау. Қайтадан қараңыз."
   },
   "common": {
     "iqra": "Iqra",

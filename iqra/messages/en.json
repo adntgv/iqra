@@ -33,6 +33,7 @@
         "hideTranslation": "Hide Translation",
         "listen": "Listen",
         "verse": "Verse",
+        "incorrectSelection": "Incorrect selection. Try again.",
         "alphabet": {
             "title": "Arabic Alphabet",
             "description": "Learn the Arabic alphabet and its transliteration. Perfect for beginners and intermediate learners.",
