@@ -1,4 +1,4 @@
-import AlphabetLearning from '@/components/alphabetlearning'
+import AlphabetLearning from '@/components/AlphabetLearning'
 
 export default function AlphabetPage() {
   return (

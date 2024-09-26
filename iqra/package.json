@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "gt-watch && next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "gt": "node scripts/generateTranslations.js",
+    "gt-watch": "nodemon scripts/generateTranslations.js"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.1",
