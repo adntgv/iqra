@@ -21,18 +21,18 @@ const NavigationControls: React.FC<NavigationControlsProps> = ({
   const t = useTranslations('learn');
 
   return (
-    <div className="flex flex-col sm:flex-row justify-between items-center bg-gradient-to-r from-primary to-secondary p-4 rounded-lg shadow-md space-y-2 sm:space-y-0">
-      <Button onClick={prevVerse} variant="outline" className="w-full sm:w-auto bg-background hover:bg-accent text-primary">
-        <ChevronLeft className="mr-2 h-4 w-4" />
+    <div className="flex justify-between items-center p-2 rounded-lg text-sm">
+      <Button onClick={prevVerse} variant="ghost" size="sm" className="text-muted-foreground hover:text-primary">
+        <ChevronLeft className="mr-1 h-4 w-4" />
         {t('previousVerse')}
       </Button>
-      <div className="text-center text-lg sm:text-xl font-bold text-background">
-        <Book className="inline-block mr-2 h-5 w-5 sm:h-6 sm:w-6" />
-        <p className="inline-block">{lessonTitle}: {t('surah')} {surah}, {t('ayah')} {ayah}</p>
+      <div className="text-center text-muted-foreground">
+        <Book className="inline-block mr-1 h-4 w-4" />
+        <span className="font-medium">{lessonTitle}: {t('surah')} {surah}, {t('ayah')} {ayah}</span>
       </div>
-      <Button onClick={nextVerse} variant="outline" className="w-full sm:w-auto bg-background hover:bg-accent text-primary">
+      <Button onClick={nextVerse} variant="ghost" size="sm" className="text-muted-foreground hover:text-primary">
         {t('nextVerse')}
-        <ChevronRight className="ml-2 h-4 w-4" />
+        <ChevronRight className="ml-1 h-4 w-4" />
       </Button>
     </div>
   );
