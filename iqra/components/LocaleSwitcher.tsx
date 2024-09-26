@@ -15,7 +15,7 @@ export default function LocaleSwitcher() {
   };
 
   return (
-    <div className="flex space-x-2">
+    <div className="flex space-x-2 justify-center">
       {routing.locales.map((l) => (
         <Button
           key={l}

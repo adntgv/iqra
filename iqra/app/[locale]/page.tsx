@@ -3,6 +3,7 @@ import { Link } from '@/i18n/routing';
 import { ArrowRight, BookOpen, AlignLeft } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import LocaleSwitcher from '@/components/LocaleSwitcher';
 
 export default function Home() {
   const t = useTranslations('home');
@@ -17,6 +18,8 @@ export default function Home() {
           <p className="text-xl sm:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto">
             {t('description')}
           </p>
+          <LocaleSwitcher />
+
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
