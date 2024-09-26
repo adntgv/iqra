@@ -1,24 +1,23 @@
-import '../globals.css'
-import { Metadata } from 'next'
-import { ThemeProvider } from "@/components/ThemeProvider"
-import Layout from '@/components/Layout'
-import {NextIntlClientProvider} from 'next-intl';
-import {getMessages} from 'next-intl/server';
-import { Analytics } from '@vercel/analytics/react';
+import "../globals.css";
+import { Metadata } from "next";
+import { ThemeProvider } from "@/components/ThemeProvider";
+import Layout from "@/components/Layout";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
 
 export const metadata: Metadata = {
-  title: 'Iqra App',
-  description: 'Learn Arabic and understand the Quran',
-  manifest: '/manifest.json',
-  themeColor: '#000000',
-}
+  title: "Iqra App",
+  description: "Learn Arabic and understand the Quran",
+  manifest: "/manifest.json",
+  themeColor: "#000000",
+};
 
 export default async function RootLayout({
   children,
-  params: {locale}
+  params: { locale },
 }: {
-  children: React.ReactNode,
-  params: {locale: string}
+  children: React.ReactNode;
+  params: { locale: string };
 }) {
   const messages = await getMessages();
 
@@ -28,10 +27,9 @@ export default async function RootLayout({
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <Layout>{children}</Layout>
-            <Analytics />
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>
     </html>
-  )
+  );
 }
