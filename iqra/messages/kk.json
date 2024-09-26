@@ -13,7 +13,15 @@
         "beginJourney": "Құран саяхатыңызды бүгін бастаңыз",
         "testimonials": "Оқушыларымыз не дейді",
         "testimonialsDescription": "Біздің оқушылар платформамыз арқылы Құранды тереңірек түсінді.",
-        "getStarted": "Қазір бастаңыз"
+        "getStarted": "Қазір бастаңыз",
+        "startLearning": "Құран саяхатыңызды бүгін бастаңыз",
+        "chapters": "Сүрелер",
+        "alFatihaDescription": "Ашылу - Құрандағы ең көп айтылған сүре",
+        "currentLesson": "Қазіргі сабақ",
+        "currentLessonDescription": "Құрандағы ең көп айтылған сүремен жалғастырыңыз",
+        "continueLesson": "Сабақты жалғастыру",
+        "basics": "Негіздер",
+        "alphabet": "Араб әліпбиі"
     },
     "learn": {
         "title": "Iqra-мен араб тілін үйреніңіз",

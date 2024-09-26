@@ -13,7 +13,15 @@
         "beginJourney": "Начните свое путешествие по Корану сегодня",
         "testimonials": "Что говорят наши ученики",
         "testimonialsDescription": "Наши ученики углубили свое понимание Корана с помощью нашей платформы.",
-        "getStarted": "Начать сейчас"
+        "getStarted": "Начать сейчас",
+        "startLearning": "Начать сейчас",
+        "chapters": "Сүрелер",
+        "alFatihaDescription": "Ашылу - Құрандағы ең көп айтылған сүре",
+        "currentLesson": "Қазіргі сабақ",
+        "currentLessonDescription": "Құрандағы ең көп айтылған сүремен жалғастырыңыз",
+        "continueLesson": "Сабақты жалғастыру",
+        "basics": "Негіздер",
+        "alphabet": "Араб әліпбиі"
     },
     "learn": {
         "title": "Изучайте арабский с Iqra",
