@@ -12,6 +12,7 @@ import NavigationControls from './NavigationControls';
 import VerseNavigation from './VerseNavigation';
 import { Card, CardContent } from "@/components/ui/card"
 import DonationPrompt from '../DonationPrompt';
+import { Button } from '../ui/button';
 
 const QuranVerseVocabularyLearning: React.FC = () => {
   const t = useTranslations('learn');
@@ -102,6 +103,15 @@ const QuranVerseVocabularyLearning: React.FC = () => {
               activeWordIndex={activeWordIndex}
               audioUrl={getAudioUrl(currentVerse.number)}
             />
+            <div className="mt-8">
+              <Button
+                onClick={() => setShowTranslation(!showTranslation)}
+                variant="outline"
+                className="w-full sm:w-auto"
+              >
+                {showTranslation ? t("hideTranslation") : t("showTranslation")}
+              </Button>
+            </div>
           </CardContent>
         </Card>
 

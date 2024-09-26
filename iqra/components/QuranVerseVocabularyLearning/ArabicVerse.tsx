@@ -51,7 +51,7 @@ const ArabicVerse: React.FC<ArabicVerseProps> = ({ verse, knownWords, setSelecte
                 ? "text-green-600 dark:text-green-400" 
                 : "text-primary",
               "relative group",
-              index === activeWordIndex && "text-4xl sm:text-6xl text-primary transform -translate-y-1 font-bold",
+              index === activeWordIndex && "text-4xl sm:text-6xl text-primary transform -translate-y-1 font-bold animate-slideInFromBottom",
               index !== activeWordIndex && "underline decoration-primary/20 decoration-dashed underline-offset-4 decoration-2",
             )}
             onClick={() => setSelectedWord(index)}

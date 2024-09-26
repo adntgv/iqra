@@ -12,7 +12,7 @@ const WordDetails: React.FC<WordDetailsProps> = ({ word, isKnown, toggleWordKnow
   const t = useTranslations('learn');
 
   return (
-    <div className="mb-6 p-4 sm:p-6 bg-secondary rounded-lg shadow-inner">
+    <div className="mb-6 p-4 sm:p-6 bg-secondary rounded-lg shadow-inner animate-fadeIn">
       <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-primary">{word.arabic}</h3>
       <p className="mb-2 text-sm sm:text-base"><strong className="text-primary">{t('translation')}:</strong> <span className="text-foreground">{word.russian}</span></p>
       <p className="mb-2 text-sm sm:text-base"><strong className="text-primary">{t('transliteration')}:</strong> <span className="text-foreground">{word.transliteration}</span></p>

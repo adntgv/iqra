@@ -34,7 +34,7 @@ const LearnedWords: React.FC = () => {
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {learnedWords.map((word, index) => (
-            <Card key={index}>
+            <Card key={index} className="animate-fadeIn transition-all duration-300 ease-in-out hover:shadow-lg">
               <CardContent className="p-4 flex justify-between items-center">
                 <span className="text-xl font-arabic">{word}</span>
                 <Button variant="destructive" size="sm" onClick={() => removeWord(word)}>

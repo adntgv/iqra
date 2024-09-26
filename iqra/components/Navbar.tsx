@@ -42,7 +42,7 @@ const Navbar = () => {
         </div>
 
         {isMenuOpen && (
-          <div className="md:hidden py-4 bg-background/95 backdrop-blur-sm">
+          <div className="md:hidden py-4 bg-background/95 backdrop-blur-sm animate-slideInFromBottom">
             <div className="flex flex-col space-y-2">
               <Button variant="ghost" asChild onClick={toggleMenu} className="text-foreground hover:text-primary">
                 <Link href="/">{t('home')}</Link>
