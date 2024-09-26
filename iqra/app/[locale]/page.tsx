@@ -42,7 +42,7 @@ export default function Home() {
             <CardContent>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/basics/alphabet" className="text-primary hover:underline">
+                  <Link href="/learn/basics/alphabet" className="text-primary hover:underline">
                     {t('alphabet')}
                   </Link>
                 </li>

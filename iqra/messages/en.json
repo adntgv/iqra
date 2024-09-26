@@ -32,7 +32,16 @@
         "showTranslation": "Show Translation",
         "hideTranslation": "Hide Translation",
         "listen": "Listen",
-        "verse": "Verse"
+        "verse": "Verse",
+        "alphabet": {
+            "title": "Arabic Alphabet",
+            "description": "Learn the Arabic alphabet and its transliteration. Perfect for beginners and intermediate learners.",
+            "letter": "Letter",
+            "name": "Name",
+            "transliteration": "Transliteration",
+            "next": "Next",
+            "previous": "Previous"
+        }
     },
     "common": {
         "iqra": "Iqra",
