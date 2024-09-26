@@ -8,6 +8,7 @@ interface NavigationControlsProps {
   nextVerse: () => void;
   surah: number;
   ayah: number;
+  lessonTitle: string;
 }
 
 const NavigationControls: React.FC<NavigationControlsProps> = ({
@@ -15,6 +16,7 @@ const NavigationControls: React.FC<NavigationControlsProps> = ({
   nextVerse,
   surah,
   ayah,
+  lessonTitle,
 }) => {
   const t = useTranslations('learn');
 
@@ -26,7 +28,7 @@ const NavigationControls: React.FC<NavigationControlsProps> = ({
       </Button>
       <div className="text-center text-lg sm:text-xl font-bold text-white">
         <Book className="inline-block mr-2 h-5 w-5 sm:h-6 sm:w-6" />
-        <p className="inline-block">{t('surah')} {surah}, {t('ayah')} {ayah}</p>
+        <p className="inline-block">{lessonTitle}: {t('surah')} {surah}, {t('ayah')} {ayah}</p>
       </div>
       <Button onClick={nextVerse} variant="outline" className="w-full sm:w-auto bg-white hover:bg-gray-100 text-emerald-700">
         {t('nextVerse')}

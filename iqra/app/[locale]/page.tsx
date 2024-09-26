@@ -4,6 +4,7 @@ import { ArrowRight, BookOpen, AlignLeft } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import LocaleSwitcher from '@/components/LocaleSwitcher';
+import { lessons } from '@/lib/lessons';
 
 export default function Home() {
   const t = useTranslations('home');
@@ -60,15 +61,18 @@ export default function Home() {
             <CardTitle className="text-3xl mb-2">{t('chapters')}</CardTitle>
           </CardHeader>
           <CardContent>
-            <ul className="space-y-4">
-              <li>
-                <Link href="/chapters/al-fatiha" className="text-lg text-primary hover:underline">
-                  Al-Fatiha
-                </Link>
-                <p className="text-muted-foreground">{t('alFatihaDescription')}</p>
-              </li>
-              {/* Add more surahs here */}
-            </ul>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {Object.values(lessons).map((lesson) => (
+              <Link
+                key={lesson.id}
+                href={`/learn?lesson=${lesson.id}&surah=${lesson.verses[0].surah}&ayah=${lesson.verses[0].ayah}`}
+                className="block p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow"
+              >
+                <h3 className="text-xl font-semibold mb-2">{lesson.title}</h3>
+                <p className="text-gray-600">{lesson.description}</p>
+              </Link>
+            ))}
+          </div>
           </CardContent>
         </Card>
 

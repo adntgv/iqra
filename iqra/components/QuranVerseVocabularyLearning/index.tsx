@@ -1,8 +1,9 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
-import { versesData } from '../../lib/versesData';
+import { useSearchParams } from 'next/navigation';
+import { lessons } from '../../lib/lessons';
 import { Verse } from '../../types';
 import ArabicVerse from './ArabicVerse';
 import TranslationToggle from './TranslationToggle';
@@ -14,13 +15,28 @@ import DonationPrompt from '../DonationPrompt';
 
 const QuranVerseVocabularyLearning: React.FC = () => {
   const t = useTranslations('learn');
+  const searchParams = useSearchParams() || new URLSearchParams();
+  const lessonId = searchParams.get('lesson') || 'alFatiha';
+  const initialSurah = parseInt(searchParams.get('surah') || '1', 10);
+  const initialAyah = parseInt(searchParams.get('ayah') || '1', 10);
+
+  const [currentLesson, setCurrentLesson] = useState(lessons[lessonId]);
   const [currentVerseIndex, setCurrentVerseIndex] = useState<number>(0);
   const [showTranslation, setShowTranslation] = useState<boolean>(false);
   const [knownWords, setKnownWords] = useState<Set<number>>(new Set());
   const [selectedWord, setSelectedWord] = useState<number>(0);
   const [activeWordIndex, setActiveWordIndex] = useState<number>(0);
 
-  const currentVerse: Verse = versesData[currentVerseIndex];
+  useEffect(() => {
+    const lesson = lessons[lessonId];
+    setCurrentLesson(lesson);
+    const verseIndex = lesson.verses.findIndex(
+      verse => verse.surah === initialSurah && verse.ayah === initialAyah
+    );
+    setCurrentVerseIndex(verseIndex >= 0 ? verseIndex : 0);
+  }, [lessonId, initialSurah, initialAyah]);
+
+  const currentVerse: Verse = currentLesson.verses[currentVerseIndex];
 
   const toggleWordKnown = (wordIndex: number) => {
     setKnownWords(prevKnownWords => {
@@ -35,12 +51,12 @@ const QuranVerseVocabularyLearning: React.FC = () => {
   };
 
   const nextVerse = () => {
-    setCurrentVerseIndex((prevIndex) => (prevIndex + 1) % versesData.length);
+    setCurrentVerseIndex((prevIndex) => (prevIndex + 1) % currentLesson.verses.length);
     resetVerseState();
   };
 
   const prevVerse = () => {
-    setCurrentVerseIndex((prevIndex) => (prevIndex - 1 + versesData.length) % versesData.length);
+    setCurrentVerseIndex((prevIndex) => (prevIndex - 1 + currentLesson.verses.length) % currentLesson.verses.length);
     resetVerseState();
   };
 
@@ -62,6 +78,7 @@ const QuranVerseVocabularyLearning: React.FC = () => {
           nextVerse={nextVerse}
           surah={currentVerse.surah}
           ayah={currentVerse.ayah}
+          lessonTitle={currentLesson.title}
         />
 
         <Card className="overflow-hidden">

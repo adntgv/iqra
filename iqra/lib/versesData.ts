@@ -1,6 +1,6 @@
 import { Verse } from '../types';
 
-const AlFatiha: Verse[] = [{
+export const AlFatiha: Verse[] = [{
   arabic: 'بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ',
   transliteration: 'Bismillāhi r-raḥmāni r-raḥīm',
   translation: {
