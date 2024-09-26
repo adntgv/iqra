@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/ThemeProvider"
 import Layout from '@/components/Layout'
 import {NextIntlClientProvider} from 'next-intl';
 import {getMessages} from 'next-intl/server';
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata: Metadata = {
   title: 'Iqra App',
@@ -27,6 +28,7 @@ export default async function RootLayout({
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <Layout>{children}</Layout>
+            <Analytics />
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>
